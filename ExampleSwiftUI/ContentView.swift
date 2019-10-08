@@ -9,8 +9,27 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    var noteCategories: [String: [Note]] {
+        Dictionary (
+            grouping: notes,
+            by: { $0.category }
+        )
+    }
+    
     var body: some View {
-        Text("Hello World")
+        NavigationView {
+            List {
+                ForEach(noteCategories.keys.sorted(), id: \.self) { key in
+                    NoteCategory(name: key, items: self.noteCategories[key]!)
+                }
+                .listRowInsets(EdgeInsets())
+                
+                NavigationLink(destination: NoteList()) {
+                    Text("Show All")
+                }
+            }.navigationBarTitle(Text("Notes"))
+        }
     }
 }
 

@@ -1,0 +1,56 @@
+[
+    {
+        "id": 1001,
+        "title": "Math",
+        "content": "This is my content",
+        "category": "School"
+    },
+    {
+        "id": 1002,
+        "title": "IT",
+        "content": "This is my content",
+        "category": "School"
+    },
+    {
+        "id": 1003,
+        "title": "French",
+        "content": "This is my content",
+        "category": "School"
+    },
+    {
+        "id": 2001,
+        "title": "Shopping List",
+        "content": "This is my content",
+        "category": "TODO"
+    },
+    {
+        "id": 2002,
+        "title": "Homework",
+        "content": "This is my content",
+        "category": "TODO"
+    },
+    {
+        "id": 2003,
+        "title": "iOS Praktikum",
+        "content": "This is my content",
+        "category": "TODO"
+    },
+    {
+        "id": 3001,
+        "title": "OK",
+        "content": "This is my content",
+        "category": "Stuff"
+    },
+    {
+        "id": 3002,
+        "title": "Music I like",
+        "content": "This is my content",
+        "category": "Stuff"
+    },
+    {
+        "id": 3003,
+        "title": "Private",
+        "content": "This is my content",
+        "category": "Stuff"
+    }
+]
