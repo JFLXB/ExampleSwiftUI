@@ -13,4 +13,8 @@ struct Note: Hashable, Codable, Identifiable {
     var category: String
     var title: String
     var content: String
+    var isFavorite: Bool
+    var date: String
+    
+    static let `empty` = Self(id: 0, category: "", title: "", content: "", isFavorite: false, date: "")    
 }

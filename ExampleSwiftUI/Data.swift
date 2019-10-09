@@ -8,7 +8,7 @@
 
 import Foundation
 
-let notes: [Note] = load("notes.json")
+let notesData: [Note] = load("notes.json")
 
 func load<T: Decodable>(_ filename: String, as type: T.Type = T.self) -> T {
     let data: Data

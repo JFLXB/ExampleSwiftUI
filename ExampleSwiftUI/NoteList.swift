@@ -9,13 +9,29 @@
 import SwiftUI
 
 struct NoteList: View {
+    @EnvironmentObject var userData: UserData
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello World!"/*@END_MENU_TOKEN@*/)
+        List {
+            Toggle(isOn: $userData.showFavorites) {
+                Text("Sort By Favorites")
+            }
+            
+            ForEach(userData.notes) { note in
+                if !self.userData.showFavorites || note.isFavorite {
+                    NavigationLink(destination: NoteDetail(note: note).environmentObject(self.userData)) {
+                         NoteRow(note: note)
+                    }
+                }
+            }
+        }.navigationBarTitle("Notes")
     }
 }
 
 struct NoteList_Previews: PreviewProvider {
     static var previews: some View {
-        NoteList()
+        NavigationView {
+            NoteList()
+        }.environmentObject(UserData())
     }
 }

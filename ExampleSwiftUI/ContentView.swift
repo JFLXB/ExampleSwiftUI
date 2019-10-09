@@ -9,10 +9,9 @@
 import SwiftUI
 
 struct ContentView: View {
-    
     var noteCategories: [String: [Note]] {
         Dictionary (
-            grouping: notes,
+            grouping: notesData,
             by: { $0.category }
         )
     }
@@ -28,7 +27,8 @@ struct ContentView: View {
                 NavigationLink(destination: NoteList()) {
                     Text("Show All")
                 }
-            }.navigationBarTitle(Text("Notes"))
+            }
+            .navigationBarTitle(Text("Recent Notes"))
         }
     }
 }

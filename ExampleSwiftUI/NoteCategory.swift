@@ -20,11 +20,13 @@ struct NoteCategory: View {
                 .padding(.top, 5)
 
             ScrollView(.horizontal) {
-                ForEach(self.items) { note in
-                    Item(note: note)
+                HStack {
+                    ForEach(self.items) { note in
+                        Item(note: note)
+                    }
                 }
             }
-            .frame(height: 150)
+            .frame(height: 125)
         }
     }
 }
@@ -38,14 +40,14 @@ struct Item: View {
                 Circle()
                     .fill(Color.blue)
                     .frame(width: CGFloat(integerLiteral: 80), height: CGFloat(integerLiteral: 80))
-                Text("N")
+                    .overlay(Circle().stroke(Color.white, lineWidth: 3))
+                    .shadow(radius: 8)
+                Text(note.title.prefix(3))
                     .font(.caption)
                     .fontWeight(.black)
                     .foregroundColor(.white)
             }
-            Text(note.title)
-                .foregroundColor(.black)
-        }.padding(.leading, 20)
+        }.padding()
     }
 }
 
