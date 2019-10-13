@@ -1,18 +1,17 @@
 //
 //  NoteDetail.swift
-//  ExampleSwiftUI
+//  Test
 //
-//  Created by Jonas Blenninger on 09.10.19.
+//  Created by Jonas Blenninger on 13.10.19.
 //  Copyright © 2019 Jonas Blenninger. All rights reserved.
 //
 
 import SwiftUI
 
+
 struct NoteDetail: View {
     @Environment(\.editMode) var mode
     @EnvironmentObject var userData: UserData
-    @State var noteDraft = Note.empty
-
     var note: Note
     
     var noteIndex: Int {
@@ -20,41 +19,42 @@ struct NoteDetail: View {
     }
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 20) {
-            if self.mode?.wrappedValue == .active {
-                HStack {
-                    Button("Cancel") {
-                        self.noteDraft = self.note
-                        self.mode?.animation().wrappedValue = .inactive
+        VStack(alignment: .leading) {
+            HStack {
+                VStack(alignment: .leading) {
+                    Text(note.title)
+                        .font(.largeTitle)
+                        .fontWeight(.black)
+                        .foregroundColor(.primary)
+                    Text(note.date)
+                        .font(.headline)
+                        .foregroundColor(.secondary)
+                }
+                Spacer()
+                
+                Button(action: {
+                    self.userData.notes[self.noteIndex].isFavorite.toggle()
+                }) {
+                    if self.userData.notes[self.noteIndex].isFavorite {
+                        Image(systemName: "star.fill").foregroundColor(.yellow)
+                    } else {
+                        Image(systemName: "star").foregroundColor(.gray)
                     }
-                    .foregroundColor(.red)
-                    Spacer()
                 }
             }
-            
-            if self.mode?.wrappedValue == .inactive {
-                NoteStatic(note: note)
-            } else {
-                NoteEditor(note: $noteDraft)
-                    .onAppear {
-                        self.noteDraft = self.note
-                    }
-                    .onDisappear {
-                        self.userData.notes[self.noteIndex] = self.noteDraft
-                    }
+
+            ScrollView {
+                Text(note.content)
+                    .lineLimit(nil)
+                    .lineSpacing(5)
+                    .multilineTextAlignment(.leading)
             }
-        }
-        .navigationBarTitle(note.title)
-        .navigationBarItems(trailing: EditButton())
-        .padding()
+        }.padding()
     }
 }
 
 struct NoteDetail_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView {
-            NoteDetail(note: Note(id: 1, category: "Category", title: "Work", content: "Content", isFavorite: false, date: "1.1.2010"))
-                .environmentObject(UserData())
-        }
+        NoteDetail(note: Note.empty)
     }
 }

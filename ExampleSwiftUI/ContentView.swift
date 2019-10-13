@@ -1,34 +1,42 @@
 //
 //  ContentView.swift
-//  ExampleSwiftUI
+//  Test
 //
-//  Created by Jonas Blenninger on 08.10.19.
+//  Created by Jonas Blenninger on 12.10.19.
 //  Copyright © 2019 Jonas Blenninger. All rights reserved.
 //
 
 import SwiftUI
 
+
 struct ContentView: View {
+    @EnvironmentObject var userData: UserData
+    
     var noteCategories: [String: [Note]] {
         Dictionary (
-            grouping: notesData,
+            grouping: userData.notes,
             by: { $0.category }
         )
     }
     
+    var showAsListLink: some View {
+        NavigationLink(destination: NoteList()) {
+            Image(systemName: "list.dash")
+                .imageScale(.large)
+                .accessibility(label: Text("Show Content As List"))
+                .padding()
+        }
+    }
+    
     var body: some View {
         NavigationView {
-            List {
+            ScrollView {
                 ForEach(noteCategories.keys.sorted(), id: \.self) { key in
-                    NoteCategory(name: key, items: self.noteCategories[key]!)
-                }
-                .listRowInsets(EdgeInsets())
-                
-                NavigationLink(destination: NoteList()) {
-                    Text("Show All")
+                    NoteCategory(name: key, notes: self.noteCategories[key]!)
                 }
             }
-            .navigationBarTitle(Text("Recent Notes"))
+            .navigationBarTitle("Recent Notes")
+            .navigationBarItems(trailing: showAsListLink)
         }
     }
 }

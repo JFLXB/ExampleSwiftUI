@@ -1,12 +1,13 @@
 //
 //  NoteList.swift
-//  ExampleSwiftUI
+//  Test
 //
-//  Created by Jonas Blenninger on 09.10.19.
+//  Created by Jonas Blenninger on 13.10.19.
 //  Copyright © 2019 Jonas Blenninger. All rights reserved.
 //
 
 import SwiftUI
+
 
 struct NoteList: View {
     @EnvironmentObject var userData: UserData
@@ -14,24 +15,26 @@ struct NoteList: View {
     var body: some View {
         List {
             Toggle(isOn: $userData.showFavorites) {
-                Text("Sort By Favorites")
+                Text("Sort By Favorites").foregroundColor(.primary)
             }
-            
-            ForEach(userData.notes) { note in
+
+            ForEach(self.userData.notes) { note in
                 if !self.userData.showFavorites || note.isFavorite {
-                    NavigationLink(destination: NoteDetail(note: note).environmentObject(self.userData)) {
-                         NoteRow(note: note)
-                    }
+                    NoteRow(note: note)
                 }
-            }
-        }.navigationBarTitle("Notes")
+            }.onDelete(perform: delete)
+        }
+        .navigationBarTitle("All Notes")
+        .navigationBarItems(trailing: EditButton())
+    }
+    
+    func delete(at offsets: IndexSet) {
+        userData.notes.remove(atOffsets: offsets)
     }
 }
 
 struct NoteList_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView {
-            NoteList()
-        }.environmentObject(UserData())
+        NoteList()
     }
 }

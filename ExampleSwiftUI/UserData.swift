@@ -1,12 +1,13 @@
 //
 //  UserData.swift
-//  ExampleSwiftUI
+//  Test
 //
-//  Created by Jonas Blenninger on 09.10.19.
+//  Created by Jonas Blenninger on 13.10.19.
 //  Copyright © 2019 Jonas Blenninger. All rights reserved.
 //
 
-import SwiftUI
+import Foundation
+
 
 final class UserData: ObservableObject {
     @Published var showFavorites = false
