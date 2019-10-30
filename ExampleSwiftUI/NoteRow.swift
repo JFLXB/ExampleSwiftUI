@@ -11,7 +11,7 @@ import SwiftUI
 
 struct NoteRow: View {
     @EnvironmentObject var userData: UserData
-    @State var isShowing = false
+    @State private var isShowing = false
     var note: Note
     
     var body: some View {
