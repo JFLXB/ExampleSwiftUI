@@ -12,6 +12,7 @@ import SwiftUI
 struct NoteCategoryItem: View {
     @EnvironmentObject var userData: UserData
     @State var isShowing = false
+    
     var note: Note
     
     var body: some View {
@@ -24,7 +25,7 @@ struct NoteCategoryItem: View {
                     .frame(width: CGFloat(integerLiteral: 80), height: CGFloat(integerLiteral: 80))
                     .overlay(Circle().stroke(Color.white, lineWidth: 3))
                     .shadow(radius: 15)
-                Text(self.note.title.prefix(6))
+                Text(self.note.title.prefix(5))
                     .font(.system(size: 20))
                     .fontWeight(.black)
                     .foregroundColor(.white)
@@ -40,6 +41,6 @@ struct NoteCategoryItem: View {
 
 struct NoteItem_Previews: PreviewProvider {
     static var previews: some View {
-        NoteCategoryItem(note: Note.empty)
+        NoteCategoryItem(note: Note.empty).environmentObject(UserData())
     }
 }

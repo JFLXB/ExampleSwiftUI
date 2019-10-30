@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  Home.swift
 //  ExampleSwiftUI
 //
 //  Created by Jonas Blenninger on 12.10.19.
@@ -9,7 +9,7 @@
 import SwiftUI
 
 
-struct ContentView: View {
+struct Home: View {
     @EnvironmentObject var userData: UserData
     
     var noteCategories: [String: [Note]] {
@@ -43,6 +43,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        Home()
     }
 }

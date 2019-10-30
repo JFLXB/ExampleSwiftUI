@@ -10,7 +10,6 @@ import SwiftUI
 
 
 struct NoteDetail: View {
-    @Environment(\.editMode) var mode
     @EnvironmentObject var userData: UserData
     var note: Note
     
@@ -55,6 +54,6 @@ struct NoteDetail: View {
 
 struct NoteDetail_Previews: PreviewProvider {
     static var previews: some View {
-        NoteDetail(note: Note.empty)
+        NoteDetail(note: Note.empty).environmentObject(UserData())
     }
 }

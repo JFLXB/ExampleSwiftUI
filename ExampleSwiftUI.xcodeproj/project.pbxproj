@@ -15,7 +15,7 @@
 		1EA1513323536B1D00C61C40 /* NoteDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA1512923536B1C00C61C40 /* NoteDetail.swift */; };
 		1EA1513423536B1D00C61C40 /* NoteList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA1512A23536B1C00C61C40 /* NoteList.swift */; };
 		1EA1513523536B1D00C61C40 /* NoteRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA1512B23536B1C00C61C40 /* NoteRow.swift */; };
-		1EA1513623536B1D00C61C40 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA1512C23536B1C00C61C40 /* ContentView.swift */; };
+		1EA1513623536B1D00C61C40 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA1512C23536B1C00C61C40 /* Home.swift */; };
 		1EA1513723536B1D00C61C40 /* NoteCategoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA1512D23536B1C00C61C40 /* NoteCategoryItem.swift */; };
 		1EA1513823536B1D00C61C40 /* NoteCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA1512E23536B1C00C61C40 /* NoteCategory.swift */; };
 		1EA1513923536B1D00C61C40 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA1512F23536B1C00C61C40 /* UserData.swift */; };
@@ -35,7 +35,7 @@
 		1EA1512923536B1C00C61C40 /* NoteDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteDetail.swift; sourceTree = "<group>"; };
 		1EA1512A23536B1C00C61C40 /* NoteList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteList.swift; sourceTree = "<group>"; };
 		1EA1512B23536B1C00C61C40 /* NoteRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteRow.swift; sourceTree = "<group>"; };
-		1EA1512C23536B1C00C61C40 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1EA1512C23536B1C00C61C40 /* Home.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		1EA1512D23536B1C00C61C40 /* NoteCategoryItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteCategoryItem.swift; sourceTree = "<group>"; };
 		1EA1512E23536B1C00C61C40 /* NoteCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteCategory.swift; sourceTree = "<group>"; };
 		1EA1512F23536B1C00C61C40 /* UserData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
@@ -76,7 +76,7 @@
 			children = (
 				1E6EA331234D3A6700504727 /* AppDelegate.swift */,
 				1E6EA333234D3A6700504727 /* SceneDelegate.swift */,
-				1EA1512C23536B1C00C61C40 /* ContentView.swift */,
+				1EA1512C23536B1C00C61C40 /* Home.swift */,
 				1EA1513023536B1C00C61C40 /* Data.swift */,
 				1EA1513123536B1C00C61C40 /* Note.swift */,
 				1EA1512E23536B1C00C61C40 /* NoteCategory.swift */,
@@ -187,7 +187,7 @@
 				1EA1513823536B1D00C61C40 /* NoteCategory.swift in Sources */,
 				1E6EA332234D3A6700504727 /* AppDelegate.swift in Sources */,
 				1EA1513923536B1D00C61C40 /* UserData.swift in Sources */,
-				1EA1513623536B1D00C61C40 /* ContentView.swift in Sources */,
+				1EA1513623536B1D00C61C40 /* Home.swift in Sources */,
 				1EA1513323536B1D00C61C40 /* NoteDetail.swift in Sources */,
 				1EA1513B23536B1D00C61C40 /* Note.swift in Sources */,
 				1EA1513723536B1D00C61C40 /* NoteCategoryItem.swift in Sources */,
@@ -330,7 +330,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ExampleSwiftUI/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = TT4RY5CMQ6;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = ExampleSwiftUI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -350,7 +350,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ExampleSwiftUI/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = TT4RY5CMQ6;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = ExampleSwiftUI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
