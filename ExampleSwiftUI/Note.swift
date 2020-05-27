@@ -17,5 +17,5 @@ struct Note: Hashable, Codable, Identifiable {
     var isFavorite: Bool
     var date: String
     
-    static let `empty` = Self(id: 0, category: "", title: "", content: "", isFavorite: false, date: "")    
+    static let `empty` = Self(id: 0, category: "", title: "", content: "", isFavorite: false, date: "")
 }

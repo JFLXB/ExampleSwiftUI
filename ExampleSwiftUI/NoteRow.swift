@@ -46,6 +46,6 @@ struct NoteRow: View {
 
 struct NoteRow_Previews: PreviewProvider {
     static var previews: some View {
-        NoteRow(note: Note.empty)
+        NoteRow(note: Note.empty).environmentObject(UserData())
     }
 }

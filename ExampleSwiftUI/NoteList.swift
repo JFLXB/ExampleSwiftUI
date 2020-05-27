@@ -35,6 +35,6 @@ struct NoteList: View {
 
 struct NoteList_Previews: PreviewProvider {
     static var previews: some View {
-        NoteList()
+        NoteList().environmentObject(UserData())
     }
 }
